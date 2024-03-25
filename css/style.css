@@ -10,24 +10,25 @@
     }
   }
   
-  #logo {
-    animation: logo-animation 5s;
-    animation-fill-mode: forwards;
-  }
+    #logo {
+        animation: logo-animation 5s;
+        animation-fill-mode: forwards;
+    }
 
 
 /* 2. Edit the body element to use the Poppins font and the background image "concrete_seamless" */
-  body{
-    font-family: 'Poppins', serif;
-    background-image: url("../images/concrete_seamless.png");
-    background-color: #f1f1f1;
-  }
+    body{
+        font-family: 'Poppins', serif;
+        background-image: url("../images/concrete_seamless.png");
+        background-color: #f1f1f1;
+    }
 
 /* 4. Edit the css for the header tag (all instances) to use flex to match our example. */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between; 
 }
 
 h1{
@@ -36,118 +37,132 @@ h1{
   
 
 /* 5. Edit nav_links class to use flex */
-  .nav_links {
-    display: flex;
-    flex-direction: column;
-  }
+    .nav_links {
+        display: flex;
+        flex-direction: column;
+    }
 
 /* 6. Style links to have the same color after being visited */
-  .nav_item a:visited,
-  .nav_item a:link{
-    color: blue;
-  }
+    .nav_item a:visited,
+    .nav_item a:link{
+        color: blue;
+    }
 
 /* Task 7: Style direct child header elements of card class */
-  .card > header {
-    background-color: #288088;
-    border: 2px solid #45ADAD;
-    padding: 20px 0;
-    border-radius: 50px 50px 0 0;
-  }
+    .card > header {
+        background-color: #288088;
+        border: 2px solid #45ADAD;
+        padding: 20px 0;
+        border-radius: 50px 50px 0 0;
+    }
 
 /* 9. Edit card class to match the example */
-  .card {
-    flex: 0 0 450px;
-    border-radius: 50px 50px 0 0;
-  }
+    .card {
+        flex: 0 0 450px;
+        border-radius: 50px 50px 0 0;
+    }
   
 /* 8. Edit pricing to match the example */
-  .pricing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+    .pricing {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
 /* Style the images within the gallery */
-  .gallery>img {
-    border: 10px solid #50C7C7;
-    margin: 10px;
-    width: 300px;
-    height: 200px;
-    object-fit: fill;
-  }
+    .gallery>img {
+        border: 10px solid #50C7C7;
+        margin: 10px;
+        width: 300px;
+        height: 200px;
+        object-fit: fill;
+    }
 
 /* Task 12: Edit gallery class to use flex */
-  .gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    .gallery {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
 
   /* Task 13: Styles for screen size greater than 900px */
 @media (min-width: 900px) {
   /* Edit header and nav_links */
-  header {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  body>header:first-of-type {
-    position: fixed;
-    width: 100%;
-  }
-  .nav_links {
-    flex-direction: row;
-  }
-  .card {
-    flex: 0 0 275px;
-  }
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end; 
+    }
+
+    .pricing {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: center; 
+    }
+    .card {
+        flex-basis: 275px; 
+    }
+
+    body > header:first-of-type {
+        position: fixed; 
+        top: 0;
+        right: 0;
+        left: 0; 
+    }
+    main h1 {
+        padding-top: 100px;
+    }
 }
 
 /* Task 14: Styles for prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  #logo {
-    animation: none;
-  }
+    #logo {
+        animation: none;
+    }
 }
 
 /* Task 15: Styles for print portrait mode */
 @media print {
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: none;
-  }
+    body {
+        font-family: Arial, Helvetica; 
+        background-image: none; 
+    }
 
-  #logo{
-    margin: auto;
-  }
+    .nav_links {
+        display: flex; 
+        flex-direction: row; 
+        align-items: flex-end; 
+        justify-content: space-around; 
+    }
+    nav {
+        width: 100%; 
+    }
+    
+    .pricing {
+        flex-wrap: nowrap; 
+        flex-direction: row;
+        align-items: flex-end; 
+    }
 
-  header{
-    flex-direction: column;
-    align-items: stretch;
-  }
+    .card {
+        border: solid 2px #45ADDD; 
+        flex-basis: 325px; 
+    }
 
-  .nav_links {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
+    #gallery, .gallery {
+        display: none; 
+    }
 
-  .pricing {
-    flex-wrap: nowrap;
-  }
-
-  .card {
-    border: solid 2px #45ADDD;
-    flex-basis: 1 1 325px;
-  }
-
-  .card ul li:nth-child(2)::after {
-    content: "\1F44D";
-  }
-
-  .gallery {
-    display: none;
-  }
+    .card li:nth-child(2)::after {
+        content: "\1F44D"; 
+    }
 }
