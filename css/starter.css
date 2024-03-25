@@ -44,13 +44,12 @@ header {
     color: blue;
   }
 
-  
-/* 8. Edit pricing to match the example */
-  .pricing {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+/* Task 7: Style direct child header elements of card class */
+  .card > header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-radius: 50px 50px 0 0;
   }
 
 /* 9. Edit card class to match the example */
@@ -58,13 +57,22 @@ header {
     flex: 0 0 450px;
     border-radius: 50px 50px 0 0;
   }
+  
+/* 8. Edit pricing to match the example */
+  .pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-  /* Task 7: Style direct child header elements of card class */
-  .card > header {
-    background-color: #288088;
-    border: 2px solid #45ADAD;
-    padding: 20px 0;
-    border-radius: 50px 50px 0 0;
+/* Style the images within the gallery */
+  .gallery>img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+    height: 200px;
+    object-fit: fill;
   }
 
 /* Task 12: Edit gallery class to use flex */
@@ -73,15 +81,6 @@ header {
     justify-content: center;
     flex-wrap: wrap;
   }
-
-/* Style the images within the gallery */
-.gallery>img {
-  border: 10px solid #50C7C7;
-  margin: 10px;
-  width: 300px;
-  height: 200px;
-  object-fit: fill;
-}
 
 
   /* Task 13: Styles for screen size greater than 900px */
